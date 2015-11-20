@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
+
+  resources :dj
+  resource :request
+  resource :show
+  resource :song
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
