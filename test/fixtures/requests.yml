@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  artist: MyString
+  link: MyString
+  requested_by: MyString
+  acknowledged: false
+
+two:
+  title: MyString
+  artist: MyString
+  link: MyString
+  requested_by: MyString
+  acknowledged: false

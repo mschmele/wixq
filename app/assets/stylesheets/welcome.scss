@@ -1,0 +1,36 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.gold-box {
+	border: 2px solid goldenrod;
+	border-radius:10px;
+	display: block;
+	padding: .5em;
+	font-size: 1.2em;
+}
+
+.summary {
+	width: 500px;
+	height: 150px;
+	text-align: left;
+	margin-top: 10px;
+	margin-left: 168px;
+	float: left;
+}
+
+
+.right {
+	height: 483px;
+	width: 500px;
+	margin-right: 168px;
+	margin-top: 10px;
+	float: right;
+}
+
+.bottom-left {
+	height: 300px;
+	width: 500px;
+	float: left;
+	margin-left: 168px;
+	margin-top: 10px;
+}
