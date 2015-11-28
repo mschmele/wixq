@@ -1,8 +1,10 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$gold: #A67E19;
+
 .gold-box {
-	border: 2px solid goldenrod;
+	border: 2px solid $gold;
 	border-radius:10px;
 	display: block;
 	padding: .5em;
@@ -33,4 +35,16 @@
 	float: left;
 	margin-left: 168px;
 	margin-top: 10px;
+}
+
+.now-playing {
+}
+
+.show_name {
+	color: $gold;
+	font-weight: bold;
+}
+
+.song_title {
+	font-style: italic;
 }
