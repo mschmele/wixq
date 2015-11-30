@@ -1,9 +1,18 @@
 <h2 align="center">Create a new DJ</h2>
 
-<%= form_for [:admin, @dj], url: {action: "create"}, html: {class:"new-dj-form"} do |f| %>
-	<label for="dj_first_name">First Name: </label>
-		<%= f.text_field :first_name %>
-	<label for="dj_last_name">Last Name: </label>
-		<%= f.text_field :last_name %>
-	<%= f.submit "Create DJ" %>
-<% end %>
+<div class="center-content">
+	<%= form_for [:admin, @dj], url: {action: "create"}, html: {class:"new-dj-form"} do |f| %>
+		<div class="dj-form-area">
+		<label for="dj_first_name">First Name: </label>
+			<%= f.text_field :first_name %>
+		</div>
+		<div class="dj-form-area">
+		<label for="dj_last_name">Last Name: </label>
+			<%= f.text_field :last_name %>
+		</div>
+
+		<div class="new-dj-form-submit">
+			<%= f.submit "Create DJ" %>
+		</div>
+	<% end %>
+</div>

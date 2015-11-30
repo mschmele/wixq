@@ -31,3 +31,11 @@
 	display: inline;
 	font-size: 4em;
 }
+
+.alert-success {
+	margin: auto auto;
+	width: 40%;
+	text-align: center;
+	padding: .5em;
+	background-color: #A1E3A9;
+}

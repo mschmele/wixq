@@ -1,0 +1,16 @@
+<div class="center-content">
+	<%= form_for [:admin, @dj], url: {action: "update"}, html: {class:"edit-dj-form"} do |f| %>
+		<div class="dj-form-area">
+		<label for="dj_first_name">First Name: </label>
+			<%= f.text_field :first_name, :value => @dj.first_name %>
+		</div>
+		<div class="dj-form-area">
+		<label for="dj_last_name">Last Name: </label>
+			<%= f.text_field :last_name, :value => @dj.last_name %>
+		</div>
+
+		<div class="edit-dj-form-submit">
+			<%= f.submit "Update DJ" %>
+		</div>
+	<% end %>
+</div>
