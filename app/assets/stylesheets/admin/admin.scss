@@ -1,0 +1,39 @@
+// Place all the styles related to the admin/admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$gold: #A67E19;
+
+.top {
+	width: 50%;
+	margin: auto auto;
+	text-align: center;
+}
+
+.management-wrapper {
+	margin: auto auto;
+	text-align: center;
+	width: 100%;
+}
+
+.management {
+	height: 400px;
+	width: 25%;
+	border: 2px solid $gold;
+	border-radius: 	10px;
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 1em;
+}
+
+.left-block {
+}
+
+.center-block {
+}
+
+.right-block {
+}
+
+.clearfix {
+	clear: both;
+}
