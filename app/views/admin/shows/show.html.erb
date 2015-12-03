@@ -1,0 +1,7 @@
+<div class="center-content">
+	<h1>All Shows</h1>
+
+	<% @shows.each do |show| %>
+		<p><%= show.name %> - <%= show.day_of_week %>s from <%= show.start_time %> to <%= show.end_time %></p>
+	<% end %>
+</div>

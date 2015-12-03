@@ -3,7 +3,7 @@ class Admin::DjsController < ApplicationController
 		@dj = Dj.new(dj_params)
 		if @dj.save
 			flash[:success] = "DJ \"" + @dj.first_name + " " + @dj.last_name + "\" Created!"
-			redirect_to admin_dj_path
+			redirect_to admin_djs_path
 		else
 			render 'new'
 		end
@@ -34,7 +34,7 @@ class Admin::DjsController < ApplicationController
 		@dj = Dj.find(params[:id])
 		@dj.destroy
 		flash[:success] = "DJ \"" + @dj.first_name + " " + @dj.last_name + "\" Deleted!"
-		redirect_to admin_dj_path
+		redirect_to admin_djs_path
 	end
 
 	private

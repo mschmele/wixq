@@ -5,7 +5,7 @@
 		<p>
 			<%= dj.first_name %> <%= dj.last_name %>
 			<%= link_to "Edit", controller: "admin/djs", action: "edit", id: dj.id %>
-			<%= link_to "Delete", admin_dj_path(:id => dj.id), method: :delete %>
+			<%= link_to "Delete", admin_djs_path(:id => dj.id), method: :delete %>
 		</p>
 	<% end %>
 </div>
