@@ -10,6 +10,11 @@
 		<label for="dj_last_name">Last Name: </label>
 			<%= f.text_field :last_name %>
 		</div>
+		<div class="dj-form-area">
+		<label for="dj_show">Show: </label>
+			<%= f.select(:show_id,
+			options_from_collection_for_select(@shows, 'id', 'name'))%>
+		</div>
 		<div class="new-dj-form-submit">
 			<%= f.submit "Create DJ" %>
 		</div>

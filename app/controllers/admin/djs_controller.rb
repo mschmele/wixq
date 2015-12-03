@@ -2,7 +2,7 @@ class Admin::DjsController < ApplicationController
 	def create
 		@dj = Dj.new(dj_params)
 		if @dj.save
-			flash[:success] = "DJ \"" + @dj.first_name + " " + @dj.last_name + "\" Created!"
+			flash[:success] = "DJ \"" + @dj.first_name + " " + @dj.last_name + "\" Created"
 			redirect_to admin_djs_path
 		else
 			render 'new'
@@ -11,6 +11,7 @@ class Admin::DjsController < ApplicationController
 
 	def new
 		@dj = Dj.new
+		@shows = Show.all
 	end
 
 	def edit
@@ -39,6 +40,6 @@ class Admin::DjsController < ApplicationController
 
 	private
 	def dj_params
-		params.require(:dj).permit(:first_name, :last_name)
+		params.require(:dj).permit(:first_name, :last_name, :show_id)
 	end
 end
