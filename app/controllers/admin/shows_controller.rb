@@ -2,7 +2,7 @@ class Admin::ShowsController < ApplicationController
 	def create
 		@show = Show.new(show_params)
 		if @show.save
-			flash[:success] = "Show " + @show.name + " created!"
+			flash[:success] = "Show \"" + @show.name + "\" created!"
 			redirect_to admin_shows_path
 		else
 			render 'new'

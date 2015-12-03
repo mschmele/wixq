@@ -14,7 +14,18 @@
 		</div>
 		<div class="show-form-area">
 		<label for="show-day-of-week">Day of the Week: </label>
-			<%= f.text_field :day_of_week %>
+		<%= select_tag(:day_of_week,
+			options_for_select(
+			[
+				['Sunday'],
+				['Monday'],
+				['Tuesday'],
+				['Wednesday'],
+				['Thursday'],
+				['Friday'],
+				['Saturday']
+			])
+		)%>
 		</div>
 		<div class="new-show-form-submit">
 			<%= f.submit "Create Show" %>
