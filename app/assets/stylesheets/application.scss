@@ -13,23 +13,41 @@
  *= require_tree .
  *= require_self
  */
+ @import "common";
 
  body {
  	margin: 0px;
  	font-family: 'Roboto Condensed', sans-serif;
 }
 
-.headerBar {
-	background-color: #dadada;
-	width: 1024px;
+.header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+.header-hero {
+
+	background-color: $white;
 	text-align: center;
-	padding: 2em;
 	margin: auto auto;
 }
 
-.headerBar h1 {
-	display: inline;
-	font-size: 4em;
+.header-hero img {
+	width: auto;
+	height: $header-height;
+	margin: 5px auto 5px auto;
+}
+
+.header-bar {
+	height: 7px;
+	background-color: $orange;
+	box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+}
+
+.body-wrap {
+	padding-top: 82px;
 }
 
 .alert-success {
