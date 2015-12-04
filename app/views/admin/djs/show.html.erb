@@ -3,7 +3,7 @@
 	<p><%= link_to "Create a new DJ", controller: "admin/djs", action: "new" %></p>
 	<% @djs.each do |dj| %>
 		<p>
-			<%= dj.first_name %> <%= dj.last_name %> on "<%= dj.show.name %>""
+			<%= dj.first_name %> <%= dj.last_name %> on "<%= dj.show ? dj.show.name : "N/A" %>""
 			<%= link_to "Edit", controller: "admin/djs", action: "edit", id: dj.id %>
 			<%= link_to "Delete", admin_djs_path(:id => dj.id), method: :delete %>
 		</p>
