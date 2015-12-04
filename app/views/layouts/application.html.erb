@@ -10,9 +10,19 @@
 <body>
 
 <div class="header">
-	<div class="header-hero">
+	<div class="header-hero float-left">
 		<%= image_tag("logo.png") %>
 	</div>
+
+	<div class="audio-player float-left">
+		<a id="player-text">listen live!</a>
+		<a id="button-icon">
+			&#9658;
+		</a>
+		<audio class="audio-stream"><source src="http://166.66.176.252:8004/;?icy=http" type="audio/mpeg" /></audio>
+	</div>
+	<div class="clearfix"></div>
+
 	<div class="header-bar"></div>
 </div>
 
