@@ -1,0 +1,34 @@
+<div class="center-content">
+<%= form_for [:admin, @show], url: {action: "update"}, html: {class:"edit-show-form"} do |f| %>
+		<div class="show-form-area">
+		<label for="show-name">Name: </label>
+			<%= f.text_field :name %>
+		</div>
+		<div class="show-form-area">
+		<label for="show-start-time">Start Time: </label>
+			<%= f.time_field :start_time %>
+		</div>
+		<div class="show-form-area">
+		<label for="show-end-time">End Time: </label>
+			<%= f.time_field :end_time %>
+		</div>
+		<div class="show-form-area">
+		<label for="show-day-of-week">Day of the Week: </label>
+		<%= select_tag(:day_of_week,
+			options_for_select(
+			[
+				['Sunday'],
+				['Monday'],
+				['Tuesday'],
+				['Wednesday'],
+				['Thursday'],
+				['Friday'],
+				['Saturday']
+			])
+		)%>
+		</div>
+		<div class="edit-show-form-submit">
+			<%= f.submit "Update Show" %>
+		</div>
+	<% end %>
+</div>

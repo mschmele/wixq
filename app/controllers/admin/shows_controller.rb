@@ -14,6 +14,7 @@ class Admin::ShowsController < ApplicationController
 	end
 
 	def edit
+		@show = Show.find(params[:id])
 	end
 
 	def show
@@ -24,6 +25,10 @@ class Admin::ShowsController < ApplicationController
 	end
 
 	def destroy
+		@show = Show.find(params[:id])
+		@show.destroy
+		flash[:success] = "Show \"" + show.name + "\" successfully deleted."
+		redirect_to admin_shows_path
 	end
 
 	private

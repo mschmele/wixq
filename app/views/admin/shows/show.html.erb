@@ -2,6 +2,10 @@
 	<h1>All Shows</h1>
 
 	<% @shows.each do |show| %>
-		<p><%= show.name %> - <%= show.day_of_week %>s from <%= show.start_time %> to <%= show.end_time %></p>
+		<p>
+			<%= show.name %> - <%= show.day_of_week %>s from <%= show.start_time %> to <%= show.end_time %>
+			<%= link_to "Edit", controller: "admin/shows", action: "edit", id: show.id %>
+			<%= link_to "Delete", admin_shows_path(:id => show.id), method: :delete %>
+		</p>
 	<% end %>
 </div>
