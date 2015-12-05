@@ -1,20 +1,30 @@
 <div class="top">
-	<h1>Admin</h1>
+	<h1>Welcome to the WIXQ Admin</h1>
 </div>
 
 <div class="management-wrapper">
 
-	<div class="left-block management">
-		<h2>Manage DJ's</h2>
-		<p>View DJ's</p>
-		<p>Create a new DJ</p>
-	</div>
+	<a href="<%= admin_djs_path %>" class="management">
+		<h2>View DJ's</h2>
+	</a>
 
-	<div class="center-block management">
-		<h2>Manage Shows</h2>
-	</div>
+	<a href="<%= admin_djs_path + "/new" %>" class="management">
+		<h2>Create a new DJ</h2>
+	</a>
 
-	<div class="right-block management">
-		<h2>Manage Songs and Requests</h2>
-	</div>
+	<a href="<%= admin_shows_path %>" class="management">
+		<h2>View Shows</h2>
+	</a>
+
+	<a href="<%= admin_shows_path + "/new" %>" class="management">
+		<h2>Create a New Show</h2>
+	</a>
+
+	<a href="#" class="management">
+		<h2>View Song Logs</h2>
+	</a>
+
+	<a href="#" class="management">
+		<h2>View Requests</h2>
+	</a>
 </div>
