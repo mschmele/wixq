@@ -1,4 +1,5 @@
 class Admin::DjsController < ApplicationController
+	layout 'admin'
 	def create
 		@dj = Dj.new(dj_params)
 		if @dj.save

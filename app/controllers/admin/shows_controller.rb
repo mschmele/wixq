@@ -1,4 +1,5 @@
 class Admin::ShowsController < ApplicationController
+	layout 'admin'
 	def create
 		@show = Show.new(show_params)
 		if @show.save

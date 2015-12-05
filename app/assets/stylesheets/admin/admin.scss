@@ -1,6 +1,8 @@
 // Place all the styles related to the admin/admin controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "common";
+
 $gold: #A67E19;
 
 .top {
@@ -23,17 +25,18 @@ $gold: #A67E19;
 	display: inline-block;
 	vertical-align: top;
 	margin: 1em 1em;
+	transition: background-color 0.5s ease;
 }
 
-.left-block {
+.management:link {
+	text-decoration: none;
+	color: $dark-grey;
 }
 
-.center-block {
+.management:visited {
+	color: $dark-grey;
 }
 
-.right-block {
-}
-
-.clearfix {
-	clear: both;
+.management:hover {
+	background-color: $beige;
 }
