@@ -3,22 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com
 @import 'common';
 
+.all-djs {
+	text-align: center;
+}
+
 .dj-button {
 	width: 20%;
-}
-
-.dj-container {
-	display: inline-block;
-	margin: 1em 1em;
-	padding: 1em;
-	width: 20%;
-	border: 2px solid $gold;
-	border-radius: 	10px;
-	vertical-align: top;
-	font-size: 1.2em;
-}
-
-.all-djs-container {
-	width: 100%;
-	text-align: center;
 }
