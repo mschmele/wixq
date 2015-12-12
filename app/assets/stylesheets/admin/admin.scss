@@ -1,7 +1,5 @@
 @import "common";
 
-$gold: #A67E19;
-
 .top {
 	width: 50%;
 	margin: auto auto;
@@ -31,6 +29,14 @@ input, select {
 .management {
 	height: 200px;
 	width: 25%;
+}
+
+.admin-link {
+	height: 20px;
+	width: 100px;
+}
+
+.button-link {
 	border: 2px solid $gold;
 	border-radius: 	10px;
 	display: inline-block;
@@ -39,15 +45,15 @@ input, select {
 	transition: background-color 0.5s ease;
 }
 
-.management:link {
+.button-link:link {
 	text-decoration: none;
 	color: $dark-grey;
 }
 
-.management:visited {
+.button-link:visited {
 	color: $dark-grey;
 }
 
-.management:hover {
+.button-link:hover {
 	background-color: $beige;
 }

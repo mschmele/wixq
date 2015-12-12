@@ -1,11 +1,14 @@
 <div class="center-content">
 	<h2>All DJ's</h2>
 	<p><%= link_to "Create a new DJ", controller: "admin/djs", action: "new" %></p>
-	<% @djs.each do |dj| %>
-		<p>
-			<%= dj.first_name %> <%= dj.last_name %> on "<%= dj.show ? dj.show.name : "N/A" %>""
-			<%= link_to "Edit", controller: "admin/djs", action: "edit", id: dj.id %>
-			<%= link_to "Delete", admin_djs_path(:id => dj.id), method: :delete %>
-		</p>
-	<% end %>
+</div>
+
+<div class="all-djs-container">
+<% @djs.each do |dj| %>
+	<div class="dj-container">
+		<p><%= dj.first_name %> <%= dj.last_name %> on "<%= dj.show ? dj.show.name : "N/A" %>"</p>
+		<%= link_to "Edit", {controller: "admin/djs", action: "edit", id: dj.id}, :class=>"button-link dj-button" %>
+		<%= link_to "Delete", admin_djs_path(:id => dj.id), method: :delete, :class=>"button-link dj-button" %>
+	</div>
+<% end %>
 </div>
