@@ -8,9 +8,9 @@ $(document).ready( function () {
 	var streamIsPlaying = false;
 
 	$('.header').on('click', '.player', function (event) {
-		(streamIsPlaying) ? audio.play() : audio.pause();
+		(!streamIsPlaying) ? audio.play() : audio.pause();
 
-		$(this).toggleClass('playing').toggleClass('not-playing');
+		$('.audio-player').toggleClass('playing').toggleClass('not-playing');
 		streamIsPlaying = !streamIsPlaying;
 	});
 });
