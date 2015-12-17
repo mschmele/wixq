@@ -18,7 +18,7 @@
  body {
  	margin: 0px;
  	font-family: 'Roboto Condensed', sans-serif;
- 	color: $dark-grey;
+ 	color: $black-ish;
 }
 
 .header {
@@ -57,11 +57,11 @@
 }
 
 .not-playing::after {
-	content: "\9658";
+	content: "\25BA";
 }
 
 .playing::after {
-	content: "\9612";
+	content: "\2590 \2590";
 }
 
 .audio-player {
@@ -69,7 +69,8 @@
 	font-size: 1.3em;
 	background-color: $orange;
 	color: $white;
-	padding: 5px;
+	padding: 6.5px 15px;
+	width: 17px;
 
 	-webkit-border-radius: 3px 0px 0px 3px;
 	-moz-border-radius: 3px 0px 0px 3px;
@@ -83,7 +84,7 @@
 
 
 .audio-marquee {
-	padding: 5.5px;
+	padding: 5px;
 	margin: 15px auto;
 	font-size: 1.5em;
 
