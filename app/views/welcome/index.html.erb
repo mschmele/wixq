@@ -1,14 +1,17 @@
-<div class="summary gold-box">
-	<p>This is some sick ass content check it out man</p>
+<div class="center">
+	<p>WIXQ is your number one music source!
+	broadcasting in the Lancaster/Millersville area
+	call us at 717-871-7075</p>
 </div>
 
-<div class="right gold-box">
-</div>
+<div class="request-block center">
+	Send a request to: <%= @show_name %>
 
-<div class="bottom-left gold-box">
-	<div class="now-playing">
-		Now Playing on <span class="show_name"><%= @show_name %></span>:
-	 	<span class="song_title"><%= @song_title %></span> by
-		<span class="song_artist"><%= @song_artist %></span>
-		</div>
+	<div class="request-form">
+		<input class="form-field" type="text" id="song" name="song" placeholder="song name"></input>
+		<input class="form-field" type="text" id="artist" name="artist" placeholder="artist"></input>
+		<input class="form-field" type="text" id="requester" name="requester" placeholder="requested by"></input>
+	</div>
+
+	<div class="orange-button submit-request">submit</div>
 </div>
