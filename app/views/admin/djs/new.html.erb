@@ -1,6 +1,6 @@
-<h2 align="center">Create a new DJ</h2>
-
 <div class="center-content">
+	<h2>Create a new DJ</h2>
+
 	<%= form_for [:admin, @dj], url: {action: "create"}, html: {class:"new-dj-form"} do |f| %>
 		<div class="dj-form-area">
 		<label for="dj_first_name">First Name: </label>
@@ -11,12 +11,16 @@
 			<%= f.text_field :last_name %>
 		</div>
 		<div class="dj-form-area">
-		<label for="dj_show">Show: </label>
-			<%= f.select(:show_id,
-			options_from_collection_for_select(@shows, 'id', 'name'))%>
-		</div>
-		<div class="new-dj-form-submit">
-			<%= f.submit "Create DJ" %>
-		</div>
+		<% if !@shows.empty? %>
+			<label for="dj_show">Show: </label>
+				<%= f.select(:show_id,
+				options_from_collection_for_select(@shows, 'id', 'name'))%>
+			</div>
+			<div class="new-dj-form-submit">
+				<%= f.submit "Create DJ" %>
+			</div>
+		<% else %>
+			<p>Uh oh! There are no shows! <%= link_to "Create a show now", admin_shows_path + "/new" %></p>
+		<% end %>
 	<% end %>
 </div>

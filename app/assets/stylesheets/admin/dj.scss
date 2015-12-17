@@ -1,23 +1,12 @@
 // Place all the styles related to the admin/dj controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// You can use Sass (SCSS) here: http://sass-lang.com
+@import 'common';
 
-.dj-form-div {
-	width: 300px;
-	margin: auto auto;
-}
-
-.dj-form-area {
-	margin: 1em 1em;
-}
-
-.new-dj-form-submit {
-	margin: auto auto;
+.all-djs {
 	text-align: center;
 }
 
-.center-content {
-	width: 40%;
-	margin: auto auto;
-	text-align: center;
+.dj-button {
+	width: 20%;
 }

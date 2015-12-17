@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   end
 
   get 'admin' => 'admin/admin#index'
+
+  get 'live' => 'live#index'
 end

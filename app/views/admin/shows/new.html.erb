@@ -14,9 +14,10 @@
 		</div>
 		<div class="show-form-area">
 		<label for="show-day-of-week">Day of the Week: </label>
-		<%= select_tag(:day_of_week,
+		<%= f.select(:day_of_week,
 			options_for_select(
 			[
+				['Select a Day of the Week', ""],
 				['Sunday'],
 				['Monday'],
 				['Tuesday'],
