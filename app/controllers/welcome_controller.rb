@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
 	def index
-		@show_name = "Meme Show 2016"
-		@song_title = "Down with the Sickness"
-		@song_artist = "Disturbed"
+		@show_name = "The O'Reilly Factor"
+		@song_title = "The Barney Theme Song"
+		@song_artist = "Wu Tang Clan"
 	end
 end

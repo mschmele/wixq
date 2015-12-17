@@ -31,8 +31,8 @@
 
 .header-hero {
 	text-align: center;
-	margin-right: -60px;
-	width: 35%;
+	width: 45%;
+	display: inline-block;
 }
 
 .header-hero img {
@@ -47,20 +47,33 @@
 	box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 }
 
+.audio-wrap {
+	width: 50%;
+	display: inline-block;
+}
+
+.player:hover {
+	cursor: pointer;
+}
+
+.not-playing::after {
+	content: "\9658";
+}
+
+.playing::after {
+	content: "\9612";
+}
+
 .audio-player {
 	margin: 15px auto;
-	font-size: 1.5em;
+	font-size: 1.3em;
 	background-color: $orange;
 	color: $white;
 	padding: 5px;
 
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	border-radius: 2px;
-
-	/*bottom internal shadow*/
-	box-shadow: 0 2px 1px #5B3700; 
-
+	-webkit-border-radius: 3px 0px 0px 3px;
+	-moz-border-radius: 3px 0px 0px 3px;
+	border-radius: 3px 0px 0px 3px;
 
   	-o-transition: all .13s ease-in-out;
   	-ms-transition:all .13s ease-in-out;
@@ -68,9 +81,18 @@
   	-webkit-transition:all .13s ease-in-out;
 }
 
-.audio-player:hover {
-	cursor: pointer;
-	box-shadow: 0 6px 7px #5B3700; 
+
+.audio-marquee {
+	padding: 5.5px;
+	margin: 15px auto;
+	font-size: 1.5em;
+
+	background-color: $beige;
+	color: $light-grey;
+
+	-webkit-border-radius: 0px 3px 3px 0px;
+	-moz-border-radius: 0px 3px 3px 0px;
+	border-radius: 0px 3px 3px 0px;
 }
 
 .body-wrap {
