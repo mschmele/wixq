@@ -1,5 +1,6 @@
 <div class="center-content">
-<%= form_for [:admin, @show], url: {action: "update"}, html: {class:"edit-show-form"} do |f| %>
+<%= form_for [:admin, @show], url: { action: "update" :id => @show.id },
+	html: {class:"edit-show-form"} do |f| %>
 		<div class="show-form-area">
 		<label for="show-name">Name: </label>
 			<%= f.text_field :name %>

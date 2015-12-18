@@ -1,10 +1,2 @@
-<% if !empty %>
-	<label for="dj_show">Show: </label>
-	<%= f.select(:show_id, options_from_collection_for_select(@shows, 'id', 'name'))%>
-	</div>
-	<div class="new-dj-form-submit">
-		<%= f.submit "Submit" %>
-	</div>
-<% else %>
-	<p>Uh oh! There are no shows! <%= link_to "Create a show now", admin_shows_path + "/new" %></p>
-<% end %>
+<label for="dj_show">Show: </label>
+<%= f.select(:show_id, options_from_collection_for_select(@shows, 'id', 'name'))%>

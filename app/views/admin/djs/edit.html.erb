@@ -1,5 +1,5 @@
 <div class="center-content">
-	<%= form_for [:admin, @dj], url: {action: "update"}, html: {class:"edit-dj-form"} do |f| %>
+	<%= form_for [:admin, @dj], url: {action: "update", :id => @dj.id}, html: {class:"edit-dj-form"} do |f| %>
 		<div class="dj-form-area">
 		<label for="dj_first_name">First Name: </label>
 			<%= f.text_field :first_name  %>
@@ -9,7 +9,17 @@
 			<%= f.text_field :last_name %>
 		</div>
 		<div class="dj-form-area">
-		<%= render partial: 'select_show', :locals => {:f => f, :empty => @shows.empty?} %>
+		<% if !@shows.empty? %>
+			<%= render partial: 'select_show', :locals => { :f => f } %>
+			<div class="edit-show-form-submit">
+				<%= f.submit "Update DJ" %>
+			</div>
+		<% else %>
+			<p>
+				Uh oh! There are no shows! <%= link_to "Create a show now",
+				admin_shows_path + "/new" %>
+			</p>
+		<% end %>
 		</div>
 	<% end %>
 </div>

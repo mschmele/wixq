@@ -44,7 +44,7 @@ class Admin::ShowsController < ApplicationController
 	private
 
 	def show_params
-		params.require(:show).permit(:name, :start_time, :end_time, :day_of_week)
+		params.require(:show).permit(:id, :name, :start_time, :end_time, :day_of_week)
 	end
 
 end

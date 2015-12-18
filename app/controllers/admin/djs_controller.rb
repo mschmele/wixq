@@ -28,7 +28,8 @@ class Admin::DjsController < ApplicationController
 	def update
 		@dj = Dj.find(params[:id])
 		if @dj.update_attributes(dj_params)
-			flash[:success] = "Successfully updated DJ \"" + dj.first_name + dj.last_name + "\"!"
+			flash[:success] = "Successfully updated DJ \"" + @dj.first_name + " " + @dj.last_name + "\"!"
+			redirect_to admin_djs_path
 		else
 			flash[:error] = "Error updating DJ!"
 			render 'update'
@@ -44,6 +45,6 @@ class Admin::DjsController < ApplicationController
 
 	private
 	def dj_params
-		params.require(:dj).permit(:first_name, :last_name, :show_id)
+		params.require(:dj).permit(:id, :first_name, :last_name, :show_id)
 	end
 end
