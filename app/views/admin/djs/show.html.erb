@@ -8,7 +8,8 @@
 	<div class="tile">
 		<p><%= dj.first_name %> <%= dj.last_name %> on "<%= dj.show ? dj.show.name : "N/A" %>"</p>
 		<%= link_to "Edit", {controller: "admin/djs", action: "edit", id: dj.id}, :class=>"button-link dj-button" %>
-		<%= link_to "Delete", admin_djs_path(:id => dj.id), method: :delete, :class=>"button-link dj-button", data: {confirm: "Are you sure?"} %>
+		<%= link_to "Delete", admin_djs_path(:id => dj.id), method: :delete, :class=>"button-link
+			dj-button", data: {confirm: "Are you sure?"} %>
 	</div>
 <% end %>
 </div>

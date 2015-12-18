@@ -6,6 +6,7 @@ class Admin::DjsController < ApplicationController
 			flash[:success] = "DJ \"" + @dj.first_name + " " + @dj.last_name + "\" Created"
 			redirect_to admin_djs_path
 		else
+			flash[:error] = "Error updating show!"
 			render 'new'
 		end
 	end
@@ -17,6 +18,7 @@ class Admin::DjsController < ApplicationController
 
 	def edit
 		@dj = Dj.find(params[:id])
+		@shows = Show.all
 	end
 
 	def show
@@ -26,8 +28,9 @@ class Admin::DjsController < ApplicationController
 	def update
 		@dj = Dj.find(params[:id])
 		if @dj.update_attributes(dj_params)
-			# It worked!
+			flash[:success] = "Successfully updated DJ \"" + dj.first_name + dj.last_name + "\"!"
 		else
+			flash[:error] = "Error updating DJ!"
 			render 'update'
 		end
 	end

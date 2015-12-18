@@ -1,11 +1,16 @@
 <div class="center-content">
 	<h1>All Shows</h1>
+	<p><%= link_to "Create a new Show", {controller: "admin/shows", action: "new"}, :class=>"button-link show-button" %></p>
+</div>
 
+<div class="all-shows">
 	<% @shows.each do |show| %>
+	<div class="tile">
 		<p>
-			<%= show.name %> - <%= show.day_of_week %>s from <%= show.start_time %> to <%= show.end_time %>
-			<%= link_to "Edit", controller: "admin/shows", action: "edit", id: show.id %>
-			<%= link_to "Delete", admin_shows_path(:id => show.id), method: :delete %>
+			<%= show.name %> - <%= show.day_of_week %>s from <%= show.start_time.strftime("%I:%M %p") %> to <%= show.end_time.strftime("%I:%M %p") %>
 		</p>
+			<%= link_to "Edit", {controller: "admin/shows", action: "edit", id: show.id}, :class=>"button-link show-button" %>
+			<%= link_to "Delete", admin_shows_path(:id => show.id), method: :delete, :class=>"button-link show-button" %>
+	</div>
 	<% end %>
 </div>

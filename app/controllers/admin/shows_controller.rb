@@ -6,6 +6,7 @@ class Admin::ShowsController < ApplicationController
 			flash[:success] = "Show \"" + @show.name + "\" created!"
 			redirect_to admin_shows_path
 		else
+			flash[:error] = "Error creating show!"
 			render 'new'
 		end
 	end
@@ -23,6 +24,14 @@ class Admin::ShowsController < ApplicationController
 	end
 
 	def update
+		@show = Show.find(params[:id])
+		if @show.update_attributes(show_params)
+			flash[:success] = "Successfully updated show \"" + show.name "\"!"
+			redirect_to admin_shows_path
+		else
+			flash[:error] = "Error updating show!"
+			render 'update'
+		end
 	end
 
 	def destroy
@@ -33,6 +42,7 @@ class Admin::ShowsController < ApplicationController
 	end
 
 	private
+
 	def show_params
 		params.require(:show).permit(:name, :start_time, :end_time, :day_of_week)
 	end

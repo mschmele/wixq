@@ -11,16 +11,7 @@
 			<%= f.text_field :last_name %>
 		</div>
 		<div class="dj-form-area">
-		<% if !@shows.empty? %>
-			<label for="dj_show">Show: </label>
-				<%= f.select(:show_id,
-				options_from_collection_for_select(@shows, 'id', 'name'))%>
-			</div>
-			<div class="new-dj-form-submit">
-				<%= f.submit "Create DJ" %>
-			</div>
-		<% else %>
-			<p>Uh oh! There are no shows! <%= link_to "Create a show now", admin_shows_path + "/new" %></p>
-		<% end %>
+		<%= render partial: 'select_show', :locals => {:f => f, :empty => @shows.empty?} %>
+		</div>
 	<% end %>
 </div>
