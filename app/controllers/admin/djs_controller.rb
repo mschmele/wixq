@@ -1,5 +1,6 @@
 class Admin::DjsController < ApplicationController
 	layout 'admin'
+	before_action :find_dj, only: [:edit, :update, :destroy]
 	def create
 		@dj = Dj.new(dj_params)
 		if @dj.save
@@ -17,7 +18,6 @@ class Admin::DjsController < ApplicationController
 	end
 
 	def edit
-		@dj = Dj.find(params[:id])
 		@shows = Show.all
 	end
 
@@ -26,7 +26,6 @@ class Admin::DjsController < ApplicationController
 	end
 
 	def update
-		@dj = Dj.find(params[:id])
 		if @dj.update_attributes(dj_params)
 			flash[:success] = "Successfully updated DJ \"" + @dj.first_name + " " + @dj.last_name + "\"!"
 			redirect_to admin_djs_path
@@ -37,14 +36,22 @@ class Admin::DjsController < ApplicationController
 	end
 
 	def destroy
-		@dj = Dj.find(params[:id])
-		@dj.destroy
-		flash[:success] = "DJ \"" + @dj.first_name + " " + @dj.last_name + "\" Deleted!"
-		redirect_to admin_djs_path
+		if @dj.destroy
+			flash[:success] = "DJ \"" + @dj.first_name + " " + @dj.last_name + "\" Deleted!"
+			redirect_to admin_djs_path
+		else
+			flash[:error] = "Error deleting DJ!"
+			render 'show'
+		end
 	end
 
 	private
+
 	def dj_params
 		params.require(:dj).permit(:id, :first_name, :last_name, :show_id)
+	end
+
+	def find_dj
+		@dj = Dj.find(params[:id])
 	end
 end
