@@ -26,7 +26,7 @@ class Admin::ShowsController < ApplicationController
 	def update
 		@show = Show.find(params[:id])
 		if @show.update_attributes(show_params)
-			flash[:success] = "Successfully updated show \"" + show.name "\"!"
+			flash[:success] = "Successfully updated show \"" + show.name + "\"!"
 			redirect_to admin_shows_path
 		else
 			flash[:error] = "Error updating show!"
