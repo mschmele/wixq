@@ -1,10 +1,11 @@
 class Admin::DjsController < ApplicationController
 	layout 'admin'
 	before_action :find_dj, only: [:edit, :update, :destroy]
+
 	def create
 		@dj = Dj.new(dj_params)
 		if @dj.save
-			flash[:success] = "DJ \"" + @dj.first_name + " " + @dj.last_name + "\" Created"
+			flash[:success] = "DJ \"" + @dj.full_name + "\" Created"
 			redirect_to admin_djs_path
 		else
 			flash[:error] = "Error updating show!"
@@ -27,7 +28,7 @@ class Admin::DjsController < ApplicationController
 
 	def update
 		if @dj.update_attributes(dj_params)
-			flash[:success] = "Successfully updated DJ \"" + @dj.first_name + " " + @dj.last_name + "\"!"
+			flash[:success] = "Successfully updated DJ \"" + @dj.full_name + "\"!"
 			redirect_to admin_djs_path
 		else
 			flash[:error] = "Error updating DJ!"
@@ -37,7 +38,7 @@ class Admin::DjsController < ApplicationController
 
 	def destroy
 		if @dj.destroy
-			flash[:success] = "DJ \"" + @dj.first_name + " " + @dj.last_name + "\" Deleted!"
+			flash[:success] = "DJ \"" + @dj.full_name "\" Deleted!"
 			redirect_to admin_djs_path
 		else
 			flash[:error] = "Error deleting DJ!"
