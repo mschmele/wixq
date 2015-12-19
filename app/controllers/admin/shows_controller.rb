@@ -3,6 +3,7 @@ class Admin::ShowsController < ApplicationController
 	before_action :find_show, only: [:edit, :update, :destroy]
 
 	def create
+    @show = Show.new(show_params)
 		if @show.save
 			flash[:success] = "Show \"" + @show.name + "\" created!"
 			redirect_to admin_shows_path

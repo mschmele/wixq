@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
-  resource :dj
-  resource :request
-  resource :show
-  resource :song
+  get 'djs' => 'djs#index'
 
   namespace :admin do
     resource :djs

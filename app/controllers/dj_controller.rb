@@ -1,2 +1,0 @@
-class DjController < ApplicationController
-end

@@ -1,0 +1,10 @@
+<div class="dj-container">
+  <p>Here are all the DJ's: </p>
+  <ul>
+    <% @djs.each do |dj| %>
+    <li><%= dj.full_name %></li>
+    <ul>
+      <li>Bio: <%= dj.bio %></li>
+    </ul>
+    <% end %>
+  </ul>
