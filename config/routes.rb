@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get 'djs' => 'djs#index'
+  get 'shows' => 'shows#index'
 
   namespace :admin do
     resource :djs

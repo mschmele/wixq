@@ -7,7 +7,7 @@
 	<% @shows.each do |show| %>
 	<div class="tile">
 		<p>
-			<%= show.name %> - <%= show.day_of_week %>s from <%= show.start_time.strftime("%I:%M %p") %> to <%= show.end_time.strftime("%I:%M %p") %>
+			<%= show.name %> - <%= show.day_of_week %>s from <%= show.timeslot %>
 		</p>
 			<%= link_to "Edit", {controller: "admin/shows", action: "edit", id: show.id}, :class=>"button-link show-button" %>
 			<%= link_to "Delete", admin_shows_path(:id => show.id), method: :delete, :class=>"button-link show-button" %>

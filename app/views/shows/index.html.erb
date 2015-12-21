@@ -1,0 +1,8 @@
+<div class="shows-container">
+  <p>Here's the shows. This should be a program grid later:</p>
+  <ul>
+  <% @shows.each do |show| %>
+    <li><%= show.name %> on <%= show.day_of_week %>s from <%= show.timeslot %></li>
+  <% end %>
+  </ul>
+</div>
