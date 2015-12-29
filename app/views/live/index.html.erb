@@ -1,13 +1,33 @@
-<div class="center-content">
+<% if @requests.any? %>
+<h2>Pending Requests</h2>
+	<ul>
+		<% @requests.each do |request| %>
+			<li>
+				Requested by <%= request.requested_by %> at <%= request.created_at.strftime("%l:%M %p %m-%d-%Y") %>
+			</li>
+			<ul>
+				<li>
+					Song: <%= request.title %>
+				</li>
+				<li>
+					Artist: <%= request.artist %>
+				</li>
+			</ul>
+		<% end %>
+	</ul>
+<% end %>
 
-<p>The "live" page will be a portal for DJ's to perform all the actions they need to perform
-during their shows.</p>
-
-<ul>
-	<li>Log Songs</li>
-	<li>View and acknowledge requests</li>
-	<li>Get a notification 5 minutes before ads need to be played</li>
-	<li>Chat with viewers</li>
-</ul>
-
-</div>
+<form class="log-song-form">
+	<div class="log-song-form-area">
+		<label for="title">Song Name: </label><input name="title" id="title" type="text" />
+	</div>
+	<div class="log-song-form-area">
+		<label for="artist">Artist: </label><input name="artist" id="artist" type="text" />
+	</div>
+	<div class="log-song-form-area">
+		<label for="requested_by">Requested By (leave blank if not a request)</label><input name="requested_by" id="requested_by" type="text" />
+	</div>
+	<div class="log-song-form-area">
+		<input type="submit" />
+	</div>
+</form>

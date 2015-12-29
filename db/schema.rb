@@ -11,44 +11,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151219041244) do
+ActiveRecord::Schema.define(version: 20151229034153) do
 
   create_table "djs", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "show_id"
-    t.text     "bio"
+    t.string   "first_name", limit: 255
+    t.string   "last_name",  limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "show_id",    limit: 4
+    t.text     "bio",        limit: 65535
   end
 
-  add_index "djs", ["show_id"], name: "index_djs_on_show_id"
+  add_index "djs", ["show_id"], name: "index_djs_on_show_id", using: :btree
 
   create_table "requests", force: :cascade do |t|
-    t.string   "title"
-    t.string   "artist"
-    t.string   "link"
-    t.string   "requested_by"
-    t.boolean  "acknowledged"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "title",        limit: 255
+    t.string   "artist",       limit: 255
+    t.string   "link",         limit: 255
+    t.string   "requested_by", limit: 255
+    t.boolean  "acknowledged",             default: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
   end
 
   create_table "shows", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",        limit: 255
     t.time     "start_time"
     t.time     "end_time"
-    t.string   "day_of_week"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "day_of_week", limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "songs", force: :cascade do |t|
-    t.string   "title"
-    t.string   "artist"
-    t.string   "requested_by"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "title",        limit: 255
+    t.string   "artist",       limit: 255
+    t.string   "requested_by", limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
 end

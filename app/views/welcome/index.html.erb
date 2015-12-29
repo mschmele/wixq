@@ -9,13 +9,12 @@
 <div class="request-block center">
 	Send a request to: <%= @show_name %>
 
-	<div class="request-form">
-		<input class="form-field" type="text" id="song" name="song" placeholder="song name"></input>
-		<input class="form-field" type="text" id="artist" name="artist" placeholder="artist"></input>
-		<input class="form-field" type="text" id="requester" name="requester" placeholder="requested by"></input>
-	</div>
-
-	<div class="orange-button submit-request">submit</div>
+	<form class="request-form">
+		<input class="form-field" type="text" id="song" name="title" placeholder="song name" />
+		<input class="form-field" type="text" id="artist" name="artist" placeholder="artist" />
+		<input class="form-field" type="text" id="requester" name="requested_by" placeholder="requested by" />
+		<input class="orange-button submit-request" type="submit" />
+</form>
 </div>
 
 

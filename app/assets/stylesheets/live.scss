@@ -4,3 +4,14 @@
 ul {
 	list-style-position: inside;
 }
+
+label {
+	display: inline-block;
+	width: 200px;
+}
+
+.log-song-form {
+	.log-song-form-area {
+		display: block;
+	}
+}
