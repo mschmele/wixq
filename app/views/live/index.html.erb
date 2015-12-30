@@ -2,17 +2,20 @@
 <h2>Pending Requests</h2>
 	<ul>
 		<% @requests.each do |request| %>
-			<li>
-				Requested by <%= request.requested_by %> at <%= request.created_at.strftime("%l:%M %p %m-%d-%Y") %>
-			</li>
-			<ul>
+			<div class="request-container">
 				<li>
-					Song: <%= request.title %>
+					Requested by <%= request.requested_by %> at <%= request.created_at.strftime("%l:%M %p %m-%d-%Y") %>
+					<button class="btn-acknowledge" data-request-id="<%= request.id %>">Acknowledge</button>
 				</li>
-				<li>
-					Artist: <%= request.artist %>
-				</li>
-			</ul>
+				<ul>
+					<li>
+						Song: <%= request.title %>
+					</li>
+					<li>
+						Artist: <%= request.artist %>
+					</li>
+				</ul>
+			</div>
 		<% end %>
 	</ul>
 <% end %>

@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+  // Handle song logging form submit
   $(".log-song-form").submit(function(event) {
     event.preventDefault();
     data = {
@@ -15,6 +17,16 @@ $(document).ready(function() {
         alert("Song logged: " + data.song.title + " by " + data.song.artist);
         $(".log-song-form")[0].reset();
       }
+    )
+  });
+
+  // Handle request acknowledge
+  $(".btn-acknowledge").on("click", function(event) {
+    $.post(
+      "/request/acknowledge?id=" + $(this).data("request-id"),
+      function(data) {
+        this.parents(".request-container").remove();
+      }.bind($(this))
     )
   });
 });
