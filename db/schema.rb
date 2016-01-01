@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151229034153) do
+ActiveRecord::Schema.define(version: 20151230034814) do
 
   create_table "djs", force: :cascade do |t|
     t.string   "first_name", limit: 255
@@ -49,6 +49,9 @@ ActiveRecord::Schema.define(version: 20151229034153) do
     t.string   "requested_by", limit: 255
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.integer  "show_id",      limit: 4
   end
+
+  add_index "songs", ["show_id"], name: "index_songs_on_show_id", using: :btree
 
 end

@@ -8,7 +8,12 @@ $(document).ready( function () {
 	var streamIsPlaying = false;
 
 	$('.header').on('click', '.player', function (event) {
-		(!streamIsPlaying) ? audio.play() : audio.pause();
+		if (!streamIsPlaying) {
+			audio.play();
+		}
+		else {
+			audio.pause();
+		}
 
 		$('.audio-player').toggleClass('playing').toggleClass('not-playing');
 		streamIsPlaying = !streamIsPlaying;
@@ -22,15 +27,12 @@ $(document).ready( function () {
 				artist: $('#artist').val(),
 				requested_by: $('#requester').val()
 			}
-		}
+		};
 		$.post(
 			'/request',
 			data,
 			function(data) {
 				alert("Thanks for the request, dude!");
-				
-				// Do something with the response data
-				console.log(data.request)
 				$('.request-form')[0].reset();
 			}
 		);

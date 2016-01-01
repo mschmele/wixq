@@ -1,36 +1,67 @@
-<% if @requests.any? %>
-<h2>Pending Requests</h2>
-	<ul>
-		<% @requests.each do |request| %>
-			<div class="request-container">
-				<li>
-					Requested by <%= request.requested_by %> at <%= request.created_at.strftime("%l:%M %p %m-%d-%Y") %>
-					<button class="btn-acknowledge" data-request-id="<%= request.id %>">Acknowledge</button>
-				</li>
-				<ul>
-					<li>
-						Song: <%= request.title %>
-					</li>
-					<li>
-						Artist: <%= request.artist %>
-					</li>
-				</ul>
-			</div>
-		<% end %>
-	</ul>
-<% end %>
+  <% if @requests.any? %>
+  <div class="dvPendingRequests dvLiveContainer">
+    <h2>Pending Requests</h2>
+      <ul>
+        <% @requests.each do |request| %>
+          <div class="request-container">
+            <li>
+              Requested
+              <% if !request.requested_by.empty? %>
+                by <span class="request-<%= request.id %>-requested-by">
+                  "<%= request.requested_by %></span>"
+              <% end %>
+              at <%= request.created_at.strftime("%l:%M %p on %m-%d-%Y") %>
+            </li>
+            <ul>
+              <li>
+                Song:
+                <span class="request-<%= request.id %>-title">
+                  <b><%= request.title %></b>
+                </span>
+              </li>
+              <li>
+                Artist:
+                <span class="request-<%= request.id %>-artist">
+                <b><%= request.artist %></b>
+                </span>
+              </li>
+              <li>
+                <button class="btn-acknowledge" data-request-id="<%= request.id %>">
+                  Acknowledge
+                </button>
+              </li>
+            </ul>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-<form class="log-song-form">
-	<div class="log-song-form-area">
-		<label for="title">Song Name: </label><input name="title" id="title" type="text" />
-	</div>
-	<div class="log-song-form-area">
-		<label for="artist">Artist: </label><input name="artist" id="artist" type="text" />
-	</div>
-	<div class="log-song-form-area">
-		<label for="requested_by">Requested By (leave blank if not a request)</label><input name="requested_by" id="requested_by" type="text" />
-	</div>
-	<div class="log-song-form-area">
-		<input type="submit" />
-	</div>
-</form>
+<div class="dvLiveContainer">
+  <form class="log-song-form">
+    <div class="log-song-form-area">
+      <label for="dj_show">Show: </label>
+      <select name="show_id" id="show_id">
+        <option value="-1" selected>
+          Choose a show
+        </option>
+        <%= options_from_collection_for_select(@shows, 'id', 'name') %>
+      </select>
+    </div>
+    <div class="log-song-form-area">
+      <label for="title">Song Name: </label>
+      <input name="title" id="title" type="text" />
+    </div>
+    <div class="log-song-form-area">
+      <label for="artist">Artist: </label>
+      <input name="artist" id="artist" type="text" />
+    </div>
+    <div class="log-song-form-area">
+      <label for="requested_by">Requested By (leave blank if not a request)</label>
+      <input name="requested_by" id="requested_by" type="text" />
+    </div>
+    <div class="log-song-form-area">
+      <input type="submit" />
+    </div>
+  </form>
+</div>

@@ -1,5 +1,6 @@
 class LiveController < ApplicationController
 	def index
-		@requests = Request.all.where(acknowledged: false)
+    @shows = Show.all
+    @requests = Request.all.where(acknowledged: false)
 	end
 end
