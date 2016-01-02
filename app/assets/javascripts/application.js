@@ -37,4 +37,20 @@ $(document).ready( function () {
 			}
 		);
 	});
+
+  getNowPlaying();
 });
+
+function getNowPlaying() {
+  $.get(
+    "/now-playing",
+    function(data) {
+      $(".now-playing-song").text(data.song.title);
+      $(".now-playing-artist").text(data.song.artist);
+
+      // Poll the "now-playing" endpoint every 30 seconds
+      // This is a terrible solution but hey here we are
+      setTimeout(getNowPlaying, 30000);
+    }
+  );
+}

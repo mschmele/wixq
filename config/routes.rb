@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'djs' => 'djs#index'
   get 'shows' => 'shows#index'
   post 'request' => 'requests#make_request'
+  get 'now-playing' => 'songs#now_playing'
 
   # Admin/CMS routes
   namespace :admin do

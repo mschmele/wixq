@@ -44,6 +44,9 @@ $(document).ready(function() {
       $.post(
         "/request/acknowledge?id=" + requestId,
         function(data) {
+
+          // Bind callback's "this" to the button selector that fired the click event
+          // There could definitely be a better way to do this
           this.parents(".request-container").remove();
         }.bind($(this))
       );
