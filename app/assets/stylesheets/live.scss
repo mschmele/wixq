@@ -5,7 +5,7 @@ ul {
 }
 
 .dvLiveContainer {
-  width: 50%;
+  width: 35%;
   margin: 1em 1em;
   padding: .5em;
   border: 2px solid $gold;
@@ -20,11 +20,30 @@ ul {
 
 label {
 	display: inline-block;
-	width: 250px;
+	width: 150px;
 }
 
 .log-song-form {
+	fieldset {
+		border: none;
+	}
+	legend {
+		margin-bottom: .1em;
+    display: block;
+    margin: auto auto;
+	}
 	.log-song-form-area {
 		display: block;
 	}
+	.submit-log-song {
+		margin: 1em  auto 0 auto;
+		text-align: center;
+		display: block;
+		height: 2.2em;
+		width: 100px;
+	}
+}
+
+.log-song-message {
+  color: #21AE57;
 }

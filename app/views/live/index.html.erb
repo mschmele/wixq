@@ -8,7 +8,7 @@
               Requested
               <% if !request.requested_by.empty? %>
                 by <span class="request-<%= request.id %>-requested-by">
-                  "<%= request.requested_by %></span>"
+                <%= request.requested_by %></span>"
               <% end %>
               at <%= request.created_at.strftime("%l:%M %p on %m-%d-%Y") %>
             </li>
@@ -39,29 +39,35 @@
 
 <div class="dvLiveContainer">
   <form class="log-song-form">
-    <div class="log-song-form-area">
-      <label for="dj_show">Show: </label>
-      <select name="show_id" id="show_id">
-        <option value="-1" selected>
-          Choose a show
-        </option>
-        <%= options_from_collection_for_select(@shows, 'id', 'name') %>
-      </select>
-    </div>
-    <div class="log-song-form-area">
-      <label for="title">Song Name: </label>
-      <input name="title" id="title" type="text" />
-    </div>
-    <div class="log-song-form-area">
-      <label for="artist">Artist: </label>
-      <input name="artist" id="artist" type="text" />
-    </div>
-    <div class="log-song-form-area">
-      <label for="requested_by">Requested By (leave blank if not a request)</label>
-      <input name="requested_by" id="requested_by" type="text" />
-    </div>
-    <div class="log-song-form-area">
-      <input type="submit" />
-    </div>
+    <fieldset>
+      <legend><h3>Log a Song</h3></legend>
+      <div class="log-song-form-area log-song-message-container">
+        <p class="log-song-message"></p>
+      </div>
+      <div class="log-song-form-area">
+        <label for="dj_show">Show: </label>
+        <select name="show_id" id="show_id">
+          <option value="-1" selected>
+            Choose a show
+          </option>
+          <%= options_from_collection_for_select(@shows, 'id', 'name') %>
+        </select>
+      </div>
+      <div class="log-song-form-area">
+        <label for="title">Song Name: </label>
+        <input name="title" id="title" type="text" />
+      </div>
+      <div class="log-song-form-area">
+        <label for="artist">Artist: </label>
+        <input name="artist" id="artist" type="text" />
+      </div>
+      <div class="log-song-form-area">
+        <label for="requested_by">Requested By (Optional)</label>
+        <input name="requested_by" id="requested_by" type="text" />
+      </div>
+      <div class="log-song-form-area">
+        <input type="submit" class="submit-log-song" />
+      </div>
+    </fieldset>
   </form>
 </div>

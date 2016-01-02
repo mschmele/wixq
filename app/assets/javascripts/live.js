@@ -21,39 +21,38 @@ $(document).ready(function() {
       "/song",
       data,
       function(data) {
-        alert("Song logged: " + data.song.title + " by " + data.song.artist);
+        $(".log-song-message").text("Song logged: " + data.song.title + " by " + data.song.artist);
         $(".log-song-form")[0].reset();
+      });
+    });
+
+    // Handle request acknowledge
+    $(".btn-acknowledge").on("click", function(event) {
+      var requestId = $(this).data("request-id");
+
+      // Construct object used for autofilling song log form with request data
+      var request = {
+        title: $(".request-" + requestId + "-title").text().trim(),
+        artist: $(".request-" + requestId + "-artist").text().trim(),
+        requested_by: $(".request-" + requestId + "-requested-by").text().trim()
+      };
+
+      if (confirm("Autofill song log form for this request?")) {
+        autofillLogSongForm(request);
       }
-    );
-  });
 
-  // Handle request acknowledge
-  $(".btn-acknowledge").on("click", function(event) {
-    var requestId = $(this).data("request-id");
-
-    // Construct object used for autofilling song log form with request data
-    var request = {
-      title: $(".request-" + requestId + "-title").text().trim(),
-      artist: $(".request-" + requestId + "-artist").text().trim(),
-      requested_by: $(".request-" + requestId + "-requested-by").text().trim()
-    };
-
-    if (confirm("Autofill song log form for this request?")) {
-      autofillLogSongForm(request);
-    }
-
-    $.post(
-      "/request/acknowledge?id=" + requestId,
-      function(data) {
-        this.parents(".request-container").remove();
-      }.bind($(this))
-    );
-  });
-
-  // Autofill song log form with request info
-  function autofillLogSongForm(request) {
-    $("#title").val(request.title);
-    $("#artist").val(request.artist);
-    $("#requested_by").val(request.requested_by);
-  }
+      $.post(
+        "/request/acknowledge?id=" + requestId,
+        function(data) {
+          this.parents(".request-container").remove();
+        }.bind($(this))
+      );
+    });
 });
+
+// Autofill song log form with request info
+function autofillLogSongForm(request) {
+  $("#title").val(request.title);
+  $("#artist").val(request.artist);
+  $("#requested_by").val(request.requested_by);
+}
