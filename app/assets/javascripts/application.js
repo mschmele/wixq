@@ -5,13 +5,15 @@
 
  // Init page modules
 $(document).ready(function() {
-  application.init();
   welcome.init();
   live.init();
+  application.init();
 });
 
+var settings;
 var application = {
   init: function() {
+    settings = this.settings;
     this.bindUIElements();
   },
 
