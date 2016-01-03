@@ -5,23 +5,21 @@
 
  // Init page modules
 $(document).ready(function() {
-  welcome.init();
-  live.init();
   application.init();
+  live.init();
+  welcome.init();
 });
 
-var settings;
 var application = {
   init: function() {
-    settings = this.settings;
-    this.bindUIElements();
+    this.bindUIElements(this.settings);
   },
 
   settings: {
     isStreamPlaying: false
   },
 
-  bindUIElements: function() {
+  bindUIElements: function(settings) {
     var audio = $('.audio-stream')[0];
     $('.header').on('click', '.player', function(event) {
       if (settings.streamIsPlaying) {

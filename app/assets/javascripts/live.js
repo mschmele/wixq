@@ -1,8 +1,6 @@
-var settings;
 var live = {
   init: function() {
-    settings = this.settings;
-    this.bindUIElements();
+    this.bindUIElements(this.settings);
   },
 
   settings: {
@@ -10,7 +8,7 @@ var live = {
     urlLogSong: "/song"
   },
 
-  bindUIElements: function() {
+  bindUIElements: function(settings) {
 
     // Handle song logging form submit
     $(".log-song-form").submit(function(event) {
@@ -29,6 +27,8 @@ var live = {
           show_id: $("#show_id").val()
         }
       };
+
+      // Log song
       $.post(
         settings.urlLogSong,
         data,
@@ -53,6 +53,7 @@ var live = {
         autofillLogSongForm(request);
       }
 
+      // Update ackowledged value for this request
       $.post(
         settings.urlAcknowledgeRequest + requestId,
         function(data) {
