@@ -11,7 +11,17 @@
 
 <div class="header">
 	<div class="header-hero float-left">
-		<%= image_tag("logo.png") %>
+		<%= link_to image_tag("logo.png"), root_path %>
+	</div>
+
+	<div class="audio-wrap">
+		<div class="audio-player float-left player not-playing">
+			<audio class="audio-stream"><source src="http://166.66.176.252:8004/;?icy=http" type="audio/mpeg" /></audio>
+		</div>
+		<div class="audio-marquee float-left player">
+			Now playing: <span class="now-playing-song"></span> by <span class="now-playing-artist"></span>
+		</div>
+		<div class="clearfix"></div>
 	</div>
 
   <div class="dvLoginLink">
@@ -22,15 +32,6 @@
     <%= link_to "Logout", logout_path %>
   <% end %>
   </div>
-	<div class="audio-wrap">
-		<div class="audio-player float-left player not-playing">
-			<audio class="audio-stream"><source src="http://166.66.176.252:8004/;?icy=http" type="audio/mpeg" /></audio>
-		</div>
-		<div class="audio-marquee float-left player">
-			Now playing: <span class="now-playing-song"></span> by <span class="now-playing-artist"></span>
-		</div>
-		<div class="clearfix"></div>
-	</div>
 
 	<div class="header-bar"></div>
 </div>

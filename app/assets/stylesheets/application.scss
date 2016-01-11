@@ -87,13 +87,14 @@
 	padding: 5px;
 	margin: 15px auto;
 	font-size: 1.5em;
-  width: 20em;
+  max-width: 20em;
   height: 1.1em;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 	background-color: $beige;
 	color: $light-grey;
+  text-align: center;
 
 	-webkit-border-radius: 0px 3px 3px 0px;
 	-moz-border-radius: 0px 3px 3px 0px;

@@ -14,6 +14,7 @@ $(document).ready(function() {
 var application = {
   init: function() {
     this.bindUIElements(this.settings);
+    this.getNowPlaying();
   },
 
   settings: {
@@ -32,5 +33,19 @@ var application = {
       $('.audio-player').toggleClass('playing').toggleClass('not-playing');
       settings.isStreamPlaying = !settings.isStreamPlaying;
     });
+  },
+
+  getNowPlaying: function() {
+    $.get(
+      "/now-playing",
+      function(data) {
+        $(".now-playing-song").text(data.song.title);
+        $(".now-playing-artist").text(data.song.artist);
+
+        // Poll the "now-playing" endpoint every 30 seconds
+        // This is a terrible solution but hey here we are
+        setTimeout(this.getNowPlaying, 30000);
+      }.bind(this)
+    );
   }
 }
