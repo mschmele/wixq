@@ -1,16 +1,34 @@
 <div class="center-content">
-	<h2>Create a new DJ</h2>
-	<%= form_for [:admin, @dj], url: {action: "create"}, html: {class:"new-dj-form"} do |f| %>
-		<div class="dj-form-area">
-		<label for="dj[first_name]">First Name: </label>
-			<%= f.text_field :first_name %>
-		</div>
-		<div class="dj-form-area">
-		<label for="dj[last_name]">Last Name: </label>
-			<%= f.text_field :last_name %>
-		</div>
+  <h2>Create a new DJ</h2>
+  <%= form_for [:admin, @dj], url: {action: "create"}, html: {class:"dj-form"} do |f| %>
     <div class="dj-form-area">
-    <label for="dj[bio]">Add a brief bio for this DJ: </label>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+    </div>
+    <div class="dj-form-area">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+    </div>
+    <div class="dj-form-area">
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+    <div class="dj-form-area">
+      Create a default password for this DJ. This DJ will be prompted to change their
+      password when they first log in.
+    </div>
+    <div class="dj-form-area">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+    <div class="dj-form-area">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+    </div>
+    <div class="dj-form-area">
+      Add a brief bio for this DJ to display on the DJ listing page:
+    </div>
+    <div class="dj-form-area">
       <%= f.text_area :bio %>
     </div>
     <div class="dj-form-area">
@@ -21,10 +39,10 @@
         </div>
       <% else %>
         <p>
-          Uh oh! There are no shows! <%= link_to "Create a show now",
-          admin_shows_path + "/new" %>
+          Uh oh! There are no shows! You'll have to <%= link_to "create a show",
+          admin_shows_path + "/new" %> before you can add DJ's.
         </p>
       <% end %>
     </div>
-	<% end %>
+  <% end %>
 </div>

@@ -1,0 +1,17 @@
+<div class="dvLogin">
+  <%= form_for @dj, :url => { :action => "handle_login", controller: "djs"} do |f| %>
+  <fieldset>
+    <div>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+    <div>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+    <div>
+      <%= f.submit "Login" %>
+    </div>
+  </fieldset>
+  <% end %>
+</div>

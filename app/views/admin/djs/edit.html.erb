@@ -1,29 +1,26 @@
 <div class="center-content">
-	<%= form_for [:admin, @dj], url: {action: "update", :id => @dj.id}, html: {class:"edit-dj-form"} do |f| %>
-		<div class="dj-form-area">
-		<label for="dj[first_name]">First Name: </label>
-			<%= f.text_field :first_name  %>
-		</div>
-		<div class="dj-form-area">
-		<label for="dj[last_name]">Last Name: </label>
-			<%= f.text_field :last_name %>
-		</div>
+  <%= form_for [:admin, @dj], url: {action: "update", :id => @dj.id}, html: {class:"dj-form"} do |f| %>
     <div class="dj-form-area">
-      <label for="dj[bio]">DJ Bio: </label>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name  %>
+    </div>
+    <div class="dj-form-area">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+    </div>
+    <div class="dj-form-area">
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+    <div class="dj-form-area">
+      <%= f.label :bio, "Edit this DJ's bio on the DJ listing page" %>
       <%= f.text_area :bio %>
     </div>
-		<div class="dj-form-area">
-		<% if !@shows.empty? %>
-			<%= render partial: 'select_show', :locals => { :f => f } %>
-			<div class="edit-show-form-submit">
-				<%= f.submit "Update DJ" %>
-			</div>
-		<% else %>
-			<p>
-				Uh oh! There are no shows! <%= link_to "Create a show now",
-				admin_shows_path + "/new" %>
-			</p>
-		<% end %>
-		</div>
-	<% end %>
+    <div class="dj-form-area">
+      <%= render partial: 'select_show', :locals => { :f => f } %>
+      <div class="edit-show-form-submit">
+        <%= f.submit "Update DJ" %>
+      </div>
+    </div>
+  <% end %>
 </div>

@@ -18,4 +18,7 @@ Rails.application.routes.draw do
   get 'live' => 'live#index'
   post 'request/acknowledge' => 'requests#acknowledge'
   post 'song' => 'songs#log'
+  get 'login' => 'djs#login'
+  post 'login' => 'djs#handle_login'
+  get 'logout' => 'djs#logout'
 end

@@ -37,19 +37,25 @@ djs = Dj.create(
       first_name: "Timmy",
       last_name: "Test",
       show: shows.first,
-      bio: "Timmy test is a real nice guy who likes music and tests."
+      bio: "Timmy test is a real nice guy who likes music and tests.",
+      password: "password",
+      password_confirmation: "password"
     },
     {
       first_name: "Tammy",
       last_name: "Testings",
       show: shows[1],
-      bio: "Tammy loves Alt-J and failing 100 level science gen eds."
+      bio: "Tammy loves Alt-J and failing 100 level science gen eds.",
+      password: "password",
+      password_confirmation: "password"
     },
     {
       first_name: "Tristan",
       last_name: "McTest",
       show: shows[2],
-      bio: "Tristan likes the radio, which I guess makes a lot of sense."
+      bio: "Tristan likes the radio, which I guess makes a lot of sense.",
+      password: "password",
+      password_confirmation: "password"
     }
   ]
 )

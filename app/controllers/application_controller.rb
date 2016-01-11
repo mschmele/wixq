@@ -8,4 +8,17 @@ class ApplicationController < ActionController::Base
       format.json { head :ok }
     end
   end
+
+  def current_user
+    @current_user ||= Dj.find(session[:dj_id]) if session[:dj_id]
+  end
+  helper_method :current_user
+
+  def require_current_user
+    unless current_user
+      flash[:error] = "Sorry, you have to login to access that page"
+      redirect_to login_path
+    end
+  end
+
 end
