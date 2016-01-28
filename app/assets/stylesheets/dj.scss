@@ -2,8 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.dvLogin {
-  margin-top: 2em;
-  fieldset {
+.dj-form-container {
+  width: 60%;
+  margin-top: 1em;
+  margin-left: 1em;
+  div {
+    margin-top: .5em;
   }
 }

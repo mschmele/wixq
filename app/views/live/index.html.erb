@@ -2,6 +2,14 @@
   <h2>Welcome to the Live DJ Portal</h2>
 </div>
 
+<% if current_user.is_default_password %>
+  <div class="dvChangePassword">
+    You're using a default password! You need to
+    <%= link_to "change your password", edit_dj_path(id: current_user.id) %>
+    here
+  </div>
+<% end %>
+
   <% if @requests.any? %>
   <div class="dvPendingRequests dvLiveContainer">
     <h2>Pending Requests</h2>

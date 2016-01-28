@@ -1,0 +1,48 @@
+<div class="dj-form-container">
+
+  <% if @dj.errors.any? %>
+    <p>Error updating your profile. Try again.</p>
+    <ul>
+      <% @dj.errors.full_messages.each do |msg| %>
+        <li><%= msg %>
+      <% end %>
+    </ul>
+  <% end %>
+
+<%= form_for @dj do |f| %>
+  <fieldset>
+    <legend>Update your profile</legend>
+    <div>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+    </div>
+    <div>
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+    </div>
+    <div>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+    <div>
+        Leave these two fields blank if you don't want to update your password
+    </div>
+    <div>
+      <%= f.label :new_password, "Update your password" %>
+      <%= f.password_field :new_password %>
+    </div>
+    <div>
+      <%= f.label :password_confirmation, "Confirm Password" %>
+      <%= f.password_field :password_confirmation %>
+    </div>
+    <div>
+      <%= f.label :current_password, "Enter your current password" %>
+      <%= f.password_field :current_password %>
+    </div>
+    <div>
+      <%= f.submit "Update Profile" %>
+    </div>
+  </fieldset>
+<% end %>
+
+</div>

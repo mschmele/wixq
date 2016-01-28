@@ -122,7 +122,19 @@
 }
 
 .dvLoginLink {
+  width: 15em;
   text-align: right;
   margin: 0 1em 0 0;
   float: right;
+  .update-profile, .logout {
+    display: inline-block;
+  }
+}
+
+.live-link-container {
+  float: right;
+}
+
+.field_with_errors {
+  display: inline;
 }

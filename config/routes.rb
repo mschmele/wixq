@@ -2,17 +2,17 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   # Public facing/content routes
-  get 'djs' => 'djs#index'
+  resources :djs
   get 'shows' => 'shows#index'
   post 'request' => 'requests#make_request'
   get 'now-playing' => 'songs#now_playing'
 
   # Admin/CMS routes
   namespace :admin do
-    resource :djs
-    resource :requests
-    resource :shows
-    resource :songs
+    resources :djs
+    resources :requests
+    resources :shows
+    resources :songs
   end
   get 'admin' => 'admin/admin#index'
   get 'live' => 'live#index'

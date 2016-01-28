@@ -13,10 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160109221839) do
 
-  create_table "admin_password_tables", force: :cascade do |t|
-    t.string "hashed_password", limit: 255
-  end
-
   create_table "djs", force: :cascade do |t|
     t.string   "first_name",          limit: 255
     t.string   "last_name",           limit: 255
