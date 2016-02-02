@@ -121,13 +121,13 @@
 	float: left;
 }
 
-.dvLoginLink {
-  width: 15em;
+.dvUserNav {
+  width: 20em;
   text-align: right;
   margin: 0 1em 0 0;
   float: right;
-  .update-profile, .logout {
-    display: inline-block;
+  a {
+    margin-right: .5em;
   }
 }
 
