@@ -9,8 +9,8 @@ default: &default
   pool: 5
   encoding: utf8
   timeout: 5000
-  username: wixq
-  password: wixq
+  username: root
+  password: root
   host: localhost
 
 development:
