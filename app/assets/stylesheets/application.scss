@@ -76,8 +76,7 @@
 	-moz-border-radius: 3px 0px 0px 3px;
 	border-radius: 3px 0px 0px 3px;
 
-  	-o-transition: all .13s ease-in-out;
-  	-ms-transition:all .13s ease-in-out;
+  	transition:all .13s ease-in-out;
   	-moz-transition:all .13s ease-in-out;
   	-webkit-transition:all .13s ease-in-out;
 }
@@ -99,6 +98,10 @@
 	-webkit-border-radius: 0px 3px 3px 0px;
 	-moz-border-radius: 0px 3px 3px 0px;
 	border-radius: 0px 3px 3px 0px;
+}
+
+.marquee-text::after {
+  content: "now playing: ";
 }
 
 .body-wrap {
@@ -137,4 +140,13 @@
 
 .field_with_errors {
   display: inline;
+
+@media (max-width: $desktop-min-width) {
+  .marquee-text::after {
+    content: 'current song ';
+  }
+
+  .current-song {
+    display: none;
+  }
 }
